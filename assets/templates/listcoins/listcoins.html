@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}List alerts{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Cripto Alerts</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="text-right">
+                <a href="{% url 'register:coin' %}" class="btn btn-success">+ Alert</a>
+            </div>
+            <br>
+    {% if coins|length == 0 %}
+    <h2 class="text-center">You don't have any alerts setting yet.</h2>
+    {% else %}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th class="text-center" scope="col">Name Alert</th>
+      <th class="text-center" scope="col">Cripto</th>
+      <th class="text-center" scope="col">Price Sell</th>
+      <th class="text-center" scope="col">Price Buy</th>
+      <th class="text-center" scope="col">Timer</th>
+      <th class="text-center" scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for coin in coins %}
+    <tr>
+        <td class="text-center">{{ coin.nameconfig }}</td>
+        <td class="text-center">{{ coin.coin }}</td>
+        <td class="text-center">{{ coin.sell }}</td>
+        <td class="text-center">{{ coin.buy }}</td>
+        <td class="text-center">{{ coin.timer }}</td>
+        <td class="text-center">
+        <a href="{% url 'update:alert' pk=coin.id %}" class="btn btn-outline-secondary">Update</a>
+        </td>
+    </tr>
+  {% endfor %}
+  {% endif %}
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<br>
+
+
+
+
+{% endblock %}

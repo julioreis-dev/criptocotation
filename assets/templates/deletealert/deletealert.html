@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Delete alert </h5>
+
+        <p class="card-text">
+          The Alert "{{ alert.nameconfig }}" will be deleted. <br>Are you sure about it?
+        </p>
+
+        <form method="post">
+          {% csrf_token %}
+          <hr />
+          <div class="text-right">
+            <a href="{% url 'update:alert' pk=alert.id %}" class="btn btn-outline-info">
+              Cancel
+            </a>
+            <button class="btn btn-outline-danger">Delete</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<br>
+{% endblock %}

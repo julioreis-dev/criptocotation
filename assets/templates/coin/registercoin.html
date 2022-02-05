@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<form class="login100-form validate-form" method="post">
+    {% csrf_token %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <h2>Configure os túneis de preço</h2>
+        </div>
+        <br>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing">Alert name</span>
+          </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="nameconfig" name="nameconfig" placeholder="">
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Coin</label>
+          </div>
+              <select class="custom-select" id="inputGroupSelect01" name="coin">
+                <option selected value="BTC">Bitcoin</option>
+                <option value="LINK">Chainlink</option>
+                <option value="XRP">XRP</option>
+                <option value="LTC">Litecoin</option>
+                <option value="CHZ">Chiliz</option>
+                <option value="ETH">Ethereum</option>
+                <option value="DOGE">Dogecoin</option>
+                <option value="ADA">Cardano</option>
+              </select>
+          </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup">Price sell</span>
+          </div>
+            <input type="text" class="form-control" aria-label="Sell" aria-describedby="inputGroup-sizing-default" id="sell" name="sell" placeholder="" required>
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Price buy</span>
+          </div>
+            <input type="text" class="form-control" aria-label="Sell" aria-describedby="inputGroup-sizing-default" id="buy" name="buy" placeholder="" required>
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Timer</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect02" name="timer">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option selected value="60">60</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-success">Send</button>
+    </div>
+    <br>
+</form>
+
+{% endblock %}
