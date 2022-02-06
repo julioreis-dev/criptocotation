@@ -111,10 +111,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'julreifir'
-EMAIL_HOST_PASSWORD = 'SG.GpaFupEjRSWJ75R3xy2l3g.A-BEnbomcVlKLTOOEMGtIwaPmJSzYOV6QGIhCaszy1'
+EMAIL_HOST_USER = 'jrfirmino01@gmail.com'
+EMAIL_HOST_PASSWORD = '&N!Tk3YgFpA5V'
 
 django_heroku.settings(locals())
