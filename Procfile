@@ -1,1 +1,1 @@
-web: gunicorn assetsAdmin.wsgi --noreload -
+web: gunicorn assetsAdmin.wsgi --preload -
