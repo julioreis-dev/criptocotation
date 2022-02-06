@@ -1,1 +1,1 @@
-web: gunicorn assetsAdmin.wsgi --log-file -
+web: gunicorn assetsAdmin.wsgi --noreload -
