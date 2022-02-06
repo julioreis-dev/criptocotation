@@ -115,6 +115,6 @@ EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'julreifir'
-EMAIL_HOST_PASSWORD = '*DYnMlU2kwfAgKRg'
+EMAIL_HOST_PASSWORD = 'SG.GpaFupEjRSWJ75R3xy2l3g.A-BEnbomcVlKLTOOEMGtIwaPmJSzYOV6QGIhCaszy1'
 
 django_heroku.settings(locals())
