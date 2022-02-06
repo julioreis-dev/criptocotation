@@ -1,1 +1,1 @@
-web: gunicorn assetsAdmin.wsgi --preload -
+web: gunicorn assetsAdmin.wsgi --log-file -
