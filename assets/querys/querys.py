@@ -26,7 +26,6 @@ class Recommendation:
     def emailbody(self, client, cotations_dict, status):
         hours, minutes = self.analisetimer(client)
         if hours != 0 or minutes >= client.timer:
-            # implantar try aqui
             try:
                 send_mail(
                     f'Recommendation to {status} the cripto {client.coin}',
