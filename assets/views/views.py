@@ -14,7 +14,7 @@ def return_price(keyvaluetuplas):
     price_coin = round(response["price"], 2)
     coin = Coincotationtable(description=keyvaluetuplas[0], price=price_coin)
     coin.save()
-    print(f'Executado {keyvaluetuplas[0]}')
+    # print(f'Executado {keyvaluetuplas[0]}')
 
 
 def call_api():

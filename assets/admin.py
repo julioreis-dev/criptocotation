@@ -7,7 +7,6 @@ class AssetstableAdmin(admin.ModelAdmin):
     raw_id_fields = ('user_id',)
 
 
-
 class CoincotationtableAdmin(admin.ModelAdmin):
     list_display = ('description', 'price')
 
