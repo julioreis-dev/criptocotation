@@ -36,13 +36,14 @@ class Recommendation:
                     [client.user_id.email],
                     fail_silently=False,
                 )
+                # print(f'enviado:{datetime.now(timezone.utc)}')
                 client.emaildate = datetime.now(timezone.utc)
                 # client.emaildate = timezone.now()
                 client.save()
             except:
                 mail_admins(
                     'Email não enviado',
-                    f'Email referente ao {client.user_id.username} com o alerta {client.nameconfig} '
+                    f'Email referente ao {client.user_id.username} com o alerta "{client.nameconfig}" '
                     f'não foi encaminhado.',
                     fail_silently=False,
                 )
@@ -50,14 +51,16 @@ class Recommendation:
     def emailrecommendation(self):
         clientscripto = self.allclientes()
         current_cotations_dict = self.lastcotations()
-        threadinstances = None
+        # threadinstances = None
         threads = []
         for client in clientscripto:
             if client.sell <= current_cotations_dict[client.coin]:
-                threadinstances = self.emailbody(client, current_cotations_dict, 'sell')
+                threads.append(threading.Thread(target=self.emailbody, args=(client, current_cotations_dict, 'sell')))
+                # threadinstances = self.emailbody(client, current_cotations_dict, 'sell')
             elif client.buy >= current_cotations_dict[client.coin]:
-                threadinstances = self.emailbody(client, current_cotations_dict, 'buy')
-            threads.append(threading.Thread(target=threadinstances, args=()))
+                threads.append(threading.Thread(target=self.emailbody, args=(client, current_cotations_dict, 'buy')))
+                # threadinstances = self.emailbody(client, current_cotations_dict, 'buy')
+            # threads.append(threading.Thread(target=threadinstances, args=()))
 
         [thread.start() for thread in threads]
         [thread.join() for thread in threads]

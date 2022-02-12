@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Cryptos - Cryptocurrency{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Opss página não encontrada!!!</h1>
+    <h3>O usuário tentou acessar a página: {{ request_path }}</h3>
+    <br>
+    <h3>Exception: {{ exception }}</h3>
+</div>
+{% endblock %}
