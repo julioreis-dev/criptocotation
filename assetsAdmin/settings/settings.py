@@ -112,18 +112,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp-relay.sendinblue.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'jrfirmino01@gmail.com'
-EMAIL_HOST_PASSWORD = 'HEtTz6UkNVcqJLDh'
+DEFAULT_FROM_EMAIL = "contato@firminostech.com"
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.umbler.com'
-# EMAIL_USE_TLS = True
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = 'jrfirmino01@gmail.com'
-# EMAIL_HOST_PASSWORD = 'asdfg012*'
+EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_USE_SSL = True
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'contato@firminostech.com'
+EMAIL_HOST_PASSWORD = 'Manu0208*'
 
 django_heroku.settings(locals())
