@@ -2,7 +2,7 @@ from assetsAdmin.settings.settings import *
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0g49mcmm=9#bs$u%&o4_r8&np)4-_4s#c@k)1c6sg@o73f+*v!'
+SECRET_KEY = config('SECRET_KEY', cast=str)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

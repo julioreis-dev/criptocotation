@@ -2,7 +2,7 @@ from assetsAdmin.settings.settings import *
 import dj_database_url
 
 
-SECRET_KEY = 'django-insecure-0g49mcmm=9#bs$u%&o4_r8&np)4-_4s#c@k)1c6sg@o73f+*v!'
+SECRET_KEY = config('SECRET_KEY', cast=str)
 
 DEBUG = False
 
